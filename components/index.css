@@ -1,7 +1,0 @@
-div[data-placeholder]:empty:before {
-  content: attr(data-placeholder);
-  color: #999;
-}
-div[data-placeholder]::-webkit-scrollbar {
-  display: none;
-}
