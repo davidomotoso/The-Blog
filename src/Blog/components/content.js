@@ -1,0 +1,18 @@
+import { useParams } from "react-router-dom";
+import UseFetchBlog from "../services/useFetchBlog";
+
+const Content = () => {
+  const { id } = useParams();
+  const { blogs } = UseFetchBlog(`http://localhost:4000/blogs/${id}`);
+  return (
+    <div className="text-xl my-6 font-normal grid gap-y-4">
+      {blogs && blogs.content ? (
+        blogs.content.map((content, index) => <p key={index}>{content}</p>)
+      ) : (
+        <p className="text-red-500 text-2xl font-bold">Error</p>
+      )}
+    </div>
+  );
+};
+
+export default Content;
