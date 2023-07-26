@@ -3,11 +3,13 @@ import UseFetchBlog from "../services/useFetchBlog";
 import { useEffect, useState } from "react";
 import { DeleteButton, EditButton } from "../components/Button";
 import deleted from "../static/Deleted_illustration.png";
+import Content from "../components/content";
 
 const BlogContent = () => {
   const { id } = useParams();
-  const { blogs, loading, deletion, handleDelete, handleEdit, image } =
-    UseFetchBlog(`http://localhost:4000/blogs/${id}`);
+  const { blogs, loading, deletion, handleDelete, handleEdit } = UseFetchBlog(
+    `http://localhost:4000/blogs/${id}`
+  );
   const [date, setDate] = useState(null);
   function handleBlog() {
     if (blogs) {
@@ -51,7 +53,7 @@ const BlogContent = () => {
   }, [blogs]);
 
   return (
-    <div className="text-white flex items-center justify-center mt-5 h-full">
+    <div className="text-white flex items-center justify-center my-5 h-full">
       {loading && <div className="text-lg">Loading...</div>}
       {deletion && (
         <div className="w-[32em] h-[88vh] flex flex-col items-center justify-center mb-2">
@@ -72,12 +74,10 @@ const BlogContent = () => {
             <p>Written by {blogs.author}</p>
             <p className="text-gray-300">{date}</p>
           </div>
-          <div className="text-xl mt-6 font-normal ">
-            <p>{blogs.content.firstContent}</p>
-            <p>{blogs.content.secondContent}</p>
-            <p>{blogs.content.thirdContent}</p>
-          </div>
-          <img src={blogs.image} />
+          <Content />
+          <section className="h-full w-full flex flex-wrap gap-1">
+            <img src={blogs.image} />
+          </section>
           <div className="flex items-center gap-x-4 mt-4">
             <DeleteButton click={() => handleDelete(blogs.id)} />
             <EditButton click={() => handleEdit(blogs.id)} />
