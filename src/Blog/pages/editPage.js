@@ -38,8 +38,7 @@ const EditBlog = () => {
     content_child.forEach((child) => {
       arr.push(child.textContent);
     });
-    // setContent(arr);
-    console.log(arr);
+    setContent(arr);
   };
 
   const name = "Edit";
@@ -58,10 +57,14 @@ const EditBlog = () => {
           />
 
           {/* Blog Content */}
-          <Textarea name={name} value={(e) => setContent(e.target.value)} />
+          <Textarea name={name} value={handleContentChange} />
 
           {/* Blog Author */}
-          <BlogAuthor value={handleContentChange} edit={author} name={name} />
+          <BlogAuthor
+            value={(e) => setAuthor(e.target.value)}
+            edit={author}
+            name={name}
+          />
         </>
       )}
       {/* Save Button */}

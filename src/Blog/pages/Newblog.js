@@ -49,9 +49,7 @@ const Newblog = () => {
         name={name}
       />
       <InputDiv
-        value={(e) => {
-          handleContentChange(e);
-        }}
+        value={handleContentChange}
         handleImg={handleImg}
         handleVideo={handleVideo}
       />
