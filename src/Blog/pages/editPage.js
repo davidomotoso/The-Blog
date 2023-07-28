@@ -12,7 +12,7 @@ const EditBlog = () => {
   const [author, setAuthor] = useState("");
   const [time, setTime] = useState("");
   const navigate = useNavigate();
-
+  const arr = [];
   useEffect(() => {
     // When 'blogs' data is available, set the state with the fetched values
     if (blogs) {
@@ -33,6 +33,15 @@ const EditBlog = () => {
     navigate(`/blog/${id}`); //navigate back to the blog page
   };
 
+  const handleContentChange = (e) => {
+    const content_child = e.target.childNodes;
+    content_child.forEach((child) => {
+      arr.push(child.textContent);
+    });
+    // setContent(arr);
+    console.log(arr);
+  };
+
   const name = "Edit";
 
   return (
@@ -49,20 +58,10 @@ const EditBlog = () => {
           />
 
           {/* Blog Content */}
-          <Textarea
-            name={name}
-            edit={content}
-            value={(e) => setContent(e.target.value)}
-          />
+          <Textarea name={name} value={(e) => setContent(e.target.value)} />
 
           {/* Blog Author */}
-          <BlogAuthor
-            value={(e) => {
-              setAuthor(e.target.value);
-            }}
-            edit={author}
-            name={name}
-          />
+          <BlogAuthor value={handleContentChange} edit={author} name={name} />
         </>
       )}
       {/* Save Button */}

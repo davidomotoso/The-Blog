@@ -6,7 +6,7 @@ const InputDiv = ({ value, handleImg, handleVideo }) => {
       <h2 className="text-center text-2xl font-semibold mb-2 text-white">
         Blog Content
       </h2>
-      <div className="w-full h-[25rem] rounded-2xl bg-white ">
+      <div className="w-full h-[25rem] rounded-2xl bg-white">
         <div
           className="overflow-y-auto overflow-x-hidden text-black font-semibold text-lg px-3 py-2 h-80 rounded-t-2xl"
           name="blogCreation"

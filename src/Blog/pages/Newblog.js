@@ -23,6 +23,7 @@ const Newblog = () => {
     setTime({ year, month, day, hour, min });
   }, []);
 
+  const arr = [];
   const handleSubmit = () => {
     const data = { title, author, time, video, image, content };
     fetch("http://localhost:4000/blogs", {
@@ -33,21 +34,11 @@ const Newblog = () => {
     navigate("/");
   };
   const handleContentChange = (e) => {
-    if (e.target) {
-      const content_child = e.target.childNodes;
-      const firstContent = content_child[0].textContent;
-      const secondContent = content_child[1].textContent;
-      const thirdContent = content_child[2].textContent;
-      // console.log(firstContent, secondContent, thirdContent);
-      if (firstContent) {
-        if (secondContent) {
-          if (thirdContent) {
-            setContent({ firstContent, secondContent, thirdContent });
-          }
-        }
-      }
-      // console.log(value.textContent);
-    }
+    const content_child = e.target.childNodes;
+    content_child.forEach((child) => {
+      arr.push(child.textContent);
+    });
+    setContent(arr);
   };
   return (
     <section className="flex flex-col gap-y-8 items-center justify-center pb-3 mt-20 relative">

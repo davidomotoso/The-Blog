@@ -2,20 +2,8 @@ import { useState } from "react";
 
 const useFile = () => {
   const content = document.querySelector("div[name=blogCreation]");
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState();
   const [video, setVideo] = useState();
-  // useEffect(() => {
-  //   if (content) {
-  //     var content_child = content.childNodes;
-  //     console.log(content_child);
-  //     if (content_child) {
-  //       content_child.forEach((hey) => {
-  //         console.log(hey);
-  //       });
-  //     }
-  //   }
-  // });
-
   const handleImg = (e) => {
     const file = e.target.files[0];
     const img = document.createElement("img");

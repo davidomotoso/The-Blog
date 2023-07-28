@@ -9,7 +9,7 @@ const Content = () => {
       {blogs && blogs.content ? (
         blogs.content.map((content, index) => <p key={index}>{content}</p>)
       ) : (
-        <p className="text-red-500 text-2xl font-bold">Error</p>
+        <p></p>
       )}
     </div>
   );
