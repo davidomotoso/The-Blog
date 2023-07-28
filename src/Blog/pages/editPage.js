@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BlogAuthor, BlogTitle } from "../components/input";
 import { useEffect, useState } from "react";
 import UseFetchBlog from "../services/useFetchBlog";
-import Textarea from "../components/textarea";
+import EditDiv from "../components/editDiv";
 
 const EditBlog = () => {
   const { id } = useParams();
@@ -11,20 +11,21 @@ const EditBlog = () => {
   const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
   const [time, setTime] = useState("");
+  const [image, setImage] = useState();
   const navigate = useNavigate();
   const arr = [];
   useEffect(() => {
     // When 'blogs' data is available, set the state with the fetched values
     if (blogs) {
       setTitle(blogs.title);
-      setContent(blogs.content);
       setAuthor(blogs.author);
       setTime(blogs.time);
+      setImage(blogs.image);
     }
   }, [blogs]);
 
   const handleSave = () => {
-    const data = { title, content, author, time };
+    const data = { title, content, author, time, image };
     fetch(`http://localhost:4000/blogs/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -57,7 +58,7 @@ const EditBlog = () => {
           />
 
           {/* Blog Content */}
-          <Textarea name={name} value={handleContentChange} />
+          <EditDiv name={name} value={handleContentChange} />
 
           {/* Blog Author */}
           <BlogAuthor
@@ -69,7 +70,7 @@ const EditBlog = () => {
       )}
       {/* Save Button */}
       <button
-        className="py-3 px-8 bg-purple-600 text-lg font-medium text-white rounded-lg active:bg-purple-900"
+        className="py-3 px-8 bg-purple-600 text-lg font-medium text-white rounded-lg hover:bg-purple-900"
         onClick={handleSave}
       >
         Save

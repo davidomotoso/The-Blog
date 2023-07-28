@@ -75,8 +75,8 @@ const BlogContent = () => {
             <p className="text-gray-300">{date}</p>
           </div>
           <Content />
-          <section className="h-full w-full flex flex-wrap gap-1">
-            <img src={blogs.image} />
+          <section className="h-full w-full ">
+            {blogs.image && <img src={blogs.image} className="rounded-lg" />}
           </section>
           <div className="flex items-center gap-x-4 mt-4">
             <DeleteButton click={() => handleDelete(blogs.id)} />

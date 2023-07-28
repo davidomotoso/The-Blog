@@ -5,7 +5,7 @@ const SubmitButton = ({ handle }) => {
     <>
       <button
         type="submit"
-        className="rounded-lg p-3 w-36 text-center text-lg font-semibold bg-purple-600 text-white my-7"
+        className="rounded-lg p-3 w-36 text-center text-lg font-semibold bg-purple-600 text-white my-7 hover:bg-purple-900"
         onClick={handle}
       >
         Submit
@@ -29,7 +29,7 @@ const DeleteButton = ({ click }) => {
     <button
       type="button"
       onClick={click}
-      className="bg-red-600 py-3 px-6 rounded-xl text-lg font-medium active:bg-red-800 group flex items-center text-black
+      className="bg-red-600 py-3 px-6 rounded-xl text-lg font-medium hover:bg-red-800 group flex items-center text-black
       "
     >
       <div className="w-max mr-2">
@@ -48,7 +48,7 @@ const EditButton = ({ click }) => {
   return (
     <button
       type="button"
-      className="bg-green-600 py-3 px-6 rounded-xl text-lg font-medium active:bg-green-800"
+      className="bg-green-600 py-3 px-6 rounded-xl text-lg font-medium hover:bg-green-800"
       onClick={click}
     >
       <i className="bi bi-pen-fill mr-2"></i> Edit

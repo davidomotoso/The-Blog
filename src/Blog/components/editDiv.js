@@ -1,19 +1,33 @@
-const EditDiv = () => {
+import { useParams } from "react-router-dom";
+import UseFetchBlog from "../services/useFetchBlog";
+import EditImg from "./editImg";
+
+const EditDiv = ({ name, value }) => {
+  const { id } = useParams();
+  const { blogs } = UseFetchBlog(`http://localhost:4000/blogs/${id}`);
   return (
-    <div
-      className="overflow-y-auto overflow-x-hidden text-black font-semibold text-lg px-3 py-2 h-96 rounded-2xl bg-white grid gap-y-2"
-      contentEditable="true"
-      aria-multiline="true"
-      role="textbox"
-      aria-label="Editable Content"
-      onKeyUp={(e) => value(e)}
-    >
-      {blogs && blogs.content ? (
-        blogs.content.map((content, index) => <p key={index}>{content}</p>)
-      ) : (
-        <p></p>
-      )}
-    </div>
+    <label htmlFor="editedContent" className="w-[50%] h-max">
+      <h2 className="text-center text-2xl font-semibold mb-2 text-white">
+        {name} Content
+      </h2>
+      <div
+        className="overflow-y-auto overflow-x-hidden text-black font-semibold text-lg px-3 py-2 h-96 rounded-2xl bg-white grid gap-y-6"
+        contentEditable="true"
+        aria-multiline="true"
+        role="textbox"
+        aria-label="Editable Content"
+        onKeyUp={(e) => value(e)}
+      >
+        <div>
+          {blogs && blogs.content ? (
+            blogs.content.map((content, index) => <p key={index}>{content}</p>)
+          ) : (
+            <p></p>
+          )}
+        </div>
+        <EditImg />
+      </div>
+    </label>
   );
 };
 
