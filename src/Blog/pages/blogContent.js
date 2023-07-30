@@ -4,52 +4,16 @@ import { useEffect, useState } from "react";
 import { DeleteButton, EditButton } from "../components/Button";
 import deleted from "../static/Deleted_illustration.png";
 import Content from "../components/content";
+import useFunction from "../partials/functions";
 
 const BlogContent = () => {
   const { id } = useParams();
   const { blogs, loading, deletion, handleDelete, handleEdit } = UseFetchBlog(
     `http://localhost:4000/blogs/${id}`
   );
-  const [date, setDate] = useState(null);
-  function handleBlog() {
-    if (blogs) {
-      const { year, month, day, hour, min } = blogs.time;
-      let date = new Date();
-      let modifiedyear = date.getFullYear();
-      let modifiedmonth = date.getMonth() + 1;
-      let modifiedmin = date.getMinutes();
-      let modifiedhour = date.getHours();
-      let modifiedday = date.getDate();
-      const newMonth = modifiedmonth - month;
-      const newDay = modifiedday - day;
-      const newMinute = modifiedmin - min;
-      const newHour = modifiedhour - hour;
-
-      modifiedyear > year
-        ? setDate(`${day}-${month}-${year}`)
-        : newMonth === 1
-        ? setDate(`${newMonth} month ago`)
-        : modifiedmonth > month
-        ? setDate(`${newMonth} months ago`)
-        : newDay === 1
-        ? setDate(`${newDay} day ago`)
-        : modifiedday > day
-        ? setDate(`${newDay} days ago`)
-        : newHour === 1
-        ? setDate(`${newHour} hour ago`)
-        : modifiedhour > hour
-        ? setDate(`${newHour} hours ago`)
-        : newMinute === 1
-        ? setDate(`${newMinute} minute ago`)
-        : modifiedmin > min
-        ? setDate(`${newMinute} minutes ago`)
-        : modifiedmin === min
-        ? setDate("Just now")
-        : console.log("none worked");
-    }
-  }
+  const { handleModifiedDate, date } = useFunction();
   useEffect(() => {
-    handleBlog();
+    handleModifiedDate(blogs);
   }, [blogs]);
 
   return (
