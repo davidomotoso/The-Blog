@@ -21,6 +21,7 @@ const EditBlog = () => {
       setAuthor(blogs.author);
       setTime(blogs.time);
       setImage(blogs.image);
+      blogs.content.map((content) => arr.push(content));
     }
   }, [blogs]);
 
@@ -35,7 +36,7 @@ const EditBlog = () => {
   };
 
   const handleContentChange = (e) => {
-    const content_child = e.target.childNodes;
+    const content_child = e.target.childNodes[0].childNodes;
     content_child.forEach((child) => {
       arr.push(child.textContent);
     });

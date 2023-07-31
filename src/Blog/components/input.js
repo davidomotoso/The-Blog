@@ -1,3 +1,5 @@
+import UseFetchBlog from "../services/useFetchBlog";
+
 const BlogTitle = ({ value, edit, name }) => {
   return (
     <label htmlFor="title" className="text-white w-[50%]">
@@ -32,4 +34,20 @@ const BlogAuthor = ({ value, edit, name }) => {
   );
 };
 
-export { BlogAuthor, BlogTitle };
+const SearchNav = () => {
+  const { handleSearch } = UseFetchBlog();
+  return (
+    <label htmlFor="search">
+      <input
+        type="text"
+        name="search"
+        placeholder="Search for blogs"
+        id="search"
+        onKeyUp={(e) => handleSearch(e)}
+        className=" text-gray-600 px-3 py-1 rounded-lg font-semibold"
+      />
+    </label>
+  );
+};
+
+export { BlogAuthor, BlogTitle, SearchNav };
