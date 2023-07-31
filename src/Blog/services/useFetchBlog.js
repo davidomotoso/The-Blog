@@ -8,21 +8,6 @@ const UseFetchBlog = (url) => {
   const [deletion, IsDeleted] = useState(false);
   const navigate = useNavigate();
 
-  // handle search function
-  const handleSearch = (e) => {
-    const inputLowerCase = e.target.value.toLowerCase();
-    fetch("http://localhost:4000/blogs")
-      .then((data) => {
-        return data.json();
-      })
-      .then((blogs) => {
-        const getTitle = blogs.filter((blog) =>
-          inputLowerCase.contains(blog.title.toLowerCase())
-        );
-        console.log(getTitle);
-      });
-  };
-
   useEffect(() => {
     fetch(url)
       .then((data) => {
@@ -46,6 +31,16 @@ const UseFetchBlog = (url) => {
       setBlogs("");
       IsDeleted(true);
     });
+  };
+
+  // handle search function
+  const handleSearch = (e) => {
+    // const inputLowerCase = e.target.value.toLowerCase();
+    const getTitle = blogs.filter((blog) =>
+      blog.title.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    // setBlogs(getTitle);
+    console.log(getTitle);
   };
 
   // navigate to the editPage
