@@ -8,7 +8,6 @@ import useFunction from "../partials/functions";
 
 const Newblog = () => {
   const [title, setTitle] = useState();
-
   const [author, setAuthor] = useState();
   const navigate = useNavigate();
   const { handleImg, handleVideo, video, image } = useFile();
