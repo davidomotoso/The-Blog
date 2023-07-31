@@ -8,6 +8,21 @@ const UseFetchBlog = (url) => {
   const [deletion, IsDeleted] = useState(false);
   const navigate = useNavigate();
 
+  // handle search function
+  const handleSearch = (e) => {
+    const inputLowerCase = e.target.value.toLowerCase();
+    fetch("http://localhost:4000/blogs")
+      .then((data) => {
+        return data.json();
+      })
+      .then((blogs) => {
+        const getTitle = blogs.filter((blog) =>
+          inputLowerCase.contains(blog.title.toLowerCase())
+        );
+        console.log(getTitle);
+      });
+  };
+
   useEffect(() => {
     fetch(url)
       .then((data) => {
@@ -22,6 +37,8 @@ const UseFetchBlog = (url) => {
         IsLoading(false);
       });
   }, [url]);
+
+  // handle deletion of blogs
   const handleDelete = (id) => {
     fetch(`http://localhost:4000/blogs/${id}`, {
       method: "DELETE",
@@ -30,10 +47,20 @@ const UseFetchBlog = (url) => {
       IsDeleted(true);
     });
   };
+
+  // navigate to the editPage
   const handleEdit = (id) => {
     navigate(`/editBlog/${id}`);
   };
-  return { blogs, error, loading, deletion, handleDelete, handleEdit };
+  return {
+    blogs,
+    error,
+    loading,
+    deletion,
+    handleDelete,
+    handleEdit,
+    handleSearch,
+  };
 };
 
 export default UseFetchBlog;
