@@ -40,7 +40,12 @@ const BlogContent = () => {
           </div>
           <Content />
           <section className="h-full w-full ">
-            {blogs.image && <img src={blogs.image} className="rounded-lg" />}
+            {blogs.image && (
+              <img
+                src={blogs.image}
+                className="w-full h-[30rem] object-cover rounded-lg"
+              />
+            )}
           </section>
           <div className="flex items-center gap-x-4 mt-4">
             <DeleteButton click={() => handleDelete(blogs.id)} />

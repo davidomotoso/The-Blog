@@ -35,7 +35,7 @@ const BlogAuthor = ({ value, edit, name }) => {
 };
 
 const SearchNav = () => {
-  const { handleSearch } = UseFetchBlog();
+  const { handleSearch } = UseFetchBlog("http://localhost:4000/blogs");
   return (
     <label htmlFor="search">
       <input

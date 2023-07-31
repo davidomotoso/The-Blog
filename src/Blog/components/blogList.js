@@ -1,4 +1,4 @@
-import logo from "../static/react.png";
+// import logo from "../static/react.png";
 import { ReadMore } from "./Button";
 const BlogList = ({ blogs }) => {
   return (
@@ -8,8 +8,12 @@ const BlogList = ({ blogs }) => {
           className="text-white flex items-center justify-center gap-x-12"
           key={blog.id}
         >
-          <figure>
-            <img src={logo} alt="" />
+          <figure className="w-64 h-64 rounded-full overflow-hidden ">
+            <img
+              src={blog.image}
+              alt=""
+              className="w-full h-full object-cover"
+            />
           </figure>
           <aside>
             <h1 className="text-3xl font-semibold">{blog.title}</h1>

@@ -645,6 +645,22 @@ video {
   height: max-content;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
+.h-\[80vh\] {
+  height: 80vh;
+}
+
+.h-\[70vh\] {
+  height: 70vh;
+}
+
+.h-\[30rem\] {
+  height: 30rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -688,6 +704,10 @@ video {
 .w-max {
   width: -moz-max-content;
   width: max-content;
+}
+
+.w-64 {
+  width: 16rem;
 }
 
 .cursor-pointer {
@@ -743,6 +763,10 @@ video {
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-y-auto {
