@@ -5,7 +5,6 @@ import InputDiv from "../components/inputDiv";
 import { useNavigate } from "react-router-dom";
 import useFile from "../partials/useFile";
 import useFunction from "../partials/functions";
-import UseFetchBlog from "../services/useFetchBlog";
 
 const Newblog = () => {
   const [title, setTitle] = useState();
@@ -18,7 +17,8 @@ const Newblog = () => {
     getDate();
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const data = { title, author, time, video, image, content };
     fetch("http://localhost:4000/blogs", {
       method: "POST",
@@ -29,7 +29,10 @@ const Newblog = () => {
   };
 
   return (
-    <section className="flex flex-col gap-y-8 items-center justify-center pb-3 mt-20 relative">
+    <form
+      className="flex flex-col gap-y-8 items-center justify-center pb-3 mt-20 relative"
+      onSubmit={handleSubmit}
+    >
       <BlogTitle
         value={(e) => {
           setTitle(e.target.value);
@@ -47,8 +50,8 @@ const Newblog = () => {
         }}
         name={name}
       />
-      <SubmitButton handle={handleSubmit} />
-    </section>
+      <SubmitButton />
+    </form>
   );
 };
 

@@ -11,6 +11,7 @@ const BlogTitle = ({ value, edit, name }) => {
         className="text-black font-semibold text-lg px-3 py-2 rounded-lg w-full "
         onChange={(e) => value(e)}
         value={edit}
+        required
       />
     </label>
   );
@@ -29,6 +30,7 @@ const BlogAuthor = ({ value, edit, name }) => {
           value(e);
         }}
         value={edit}
+        required
       />
     </label>
   );
