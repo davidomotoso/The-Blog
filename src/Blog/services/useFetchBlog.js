@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const UseFetchBlog = (url) => {
   const [blogs, setBlogs] = useState(null);
+  const [originalBlogs, setOriginalBlogs] = useState(null);
   const [error, setError] = useState(null);
   const [loading, IsLoading] = useState(true);
   const [deletion, IsDeleted] = useState(false);
@@ -15,6 +16,7 @@ const UseFetchBlog = (url) => {
       })
       .then((data) => {
         setBlogs(data);
+        setOriginalBlogs(data);
         IsLoading(false);
       })
       .catch((err) => {
@@ -35,12 +37,17 @@ const UseFetchBlog = (url) => {
 
   // handle search function
   const handleSearch = (e) => {
-    // const inputLowerCase = e.target.value.toLowerCase();
-    const getTitle = blogs.filter((blog) =>
-      blog.title.toLowerCase().includes(e.target.value.toLowerCase())
-    );
-    // setBlogs(getTitle);
-    console.log(getTitle);
+    const inputLowerCase = e.target.value.toLowerCase();
+    if (inputLowerCase === "") {
+      // If the input field is empty, reset blogs state to the original data
+      setBlogs(originalBlogs);
+    } else {
+      // Filter and update blogs state with matching titles
+      const getTitle = originalBlogs.filter((blog) =>
+        blog.title.toLowerCase().includes(inputLowerCase)
+      );
+      console.log(setBlogs(getTitle));
+    }
   };
 
   // navigate to the editPage
