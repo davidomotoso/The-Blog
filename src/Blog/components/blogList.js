@@ -1,4 +1,4 @@
-// import logo from "../static/react.png";
+import logo from "../static/newBlog.jpg";
 import { ReadMore } from "./Button";
 const BlogList = ({ blogs }) => {
   return (
@@ -9,11 +9,15 @@ const BlogList = ({ blogs }) => {
           key={blog.id}
         >
           <figure className="w-64 h-64 rounded-full overflow-hidden ">
-            <img
-              src={blog.image}
-              alt=""
-              className="w-full h-full object-cover"
-            />
+            {blog && blog.image ? (
+              <img
+                src={blog.image}
+                alt={blog.id}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <img src={logo} className="w-full h-full object-cover" />
+            )}
           </figure>
           <aside>
             <h1 className="text-3xl font-semibold">{blog.title}</h1>
