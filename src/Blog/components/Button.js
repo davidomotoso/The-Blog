@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import trash from "../static/trash.gif";
-const SubmitButton = ({ handle }) => {
+const SubmitButton = () => {
   return (
     <>
       <button
         type="submit"
         className="rounded-lg p-3 w-36 text-center text-lg font-semibold bg-purple-600 text-white my-7 hover:bg-purple-900"
-        onClick={handle}
       >
         Submit
       </button>
