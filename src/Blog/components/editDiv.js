@@ -11,7 +11,7 @@ const EditDiv = ({ name, value }) => {
         {name} Content
       </h2>
       <div
-        className="overflow-y-auto overflow-x-hidden text-black font-semibold text-lg px-3 py-2 h-96 rounded-2xl bg-white grid gap-y-6"
+        className="overflow-y-auto overflow-x-hidden text-black font-semibold text-lg px-3 py-2 h-96 rounded-2xl bg-white grid gap-y-6 cursor-text"
         contentEditable="true"
         aria-multiline="true"
         role="textbox"
