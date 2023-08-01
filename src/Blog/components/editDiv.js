@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import UseFetchBlog from "../services/useFetchBlog";
 import EditImg from "./editImg";
+import "./index.css";
 
 const EditDiv = ({ name, value }) => {
   const { id } = useParams();
