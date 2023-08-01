@@ -17,7 +17,9 @@
     },
     {
       "title": "Blog going great.",
-      "content": ["Today i am excited i created a new feature for my app."],
+      "content": [
+        "Today i am excited i created a new feature for my app."
+      ],
       "author": "David",
       "time": {
         "year": 2023,

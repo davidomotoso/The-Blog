@@ -19,13 +19,17 @@ const Newblog = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = { title, author, time, video, image, content };
-    fetch("http://localhost:4000/blogs", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    navigate("/");
+    if (!content) {
+      alert("your blog does not contain any content");
+    } else {
+      const data = { title, author, time, video, image, content };
+      fetch("http://localhost:4000/blogs", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      navigate("/");
+    }
   };
 
   return (
