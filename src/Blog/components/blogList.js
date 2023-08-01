@@ -1,8 +1,11 @@
-import logo from "../static/newBlog.jpg";
+import noDefault from "../static/newBlog.jpg";
 import { ReadMore } from "./Button";
 const BlogList = ({ blogs }) => {
   return (
-    <section className="flex flex-col gap-y-14 items-start justify-center mt-20">
+    <section
+      className="flex flex-col gap-y-14 items-start justify-center mt-20 mb-10
+    "
+    >
       {blogs.map((blog) => (
         <section
           className="text-white flex items-center justify-center gap-x-12"
@@ -16,7 +19,7 @@ const BlogList = ({ blogs }) => {
                 className="w-full h-full object-cover"
               />
             ) : (
-              <img src={logo} className="w-full h-full object-cover" />
+              <img src={noDefault} className="w-full h-full object-cover" />
             )}
           </figure>
           <aside>

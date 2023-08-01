@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import UseFetchBlog from "../services/useFetchBlog";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { DeleteButton, EditButton } from "../components/Button";
 import deleted from "../static/Deleted_illustration.png";
 import Content from "../components/content";
@@ -36,7 +36,10 @@ const BlogContent = () => {
           <h1 className="text-3xl font-semibold mb-1">{blogs.title}</h1>
           <div className="text-lg flex items-center justify-between">
             <p>Written by {blogs.author}</p>
-            <p className="text-gray-300">{date}</p>
+            <p className="text-gray-300 flex items-center gap-x-5">
+              {blogs.edit && <span>{blogs.edit} </span>}
+              <span>{date}</span>
+            </p>
           </div>
           <Content />
           <section className="h-full w-full ">

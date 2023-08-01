@@ -5,6 +5,7 @@ import InputDiv from "../components/inputDiv";
 import { useNavigate } from "react-router-dom";
 import useFile from "../partials/useFile";
 import useFunction from "../partials/functions";
+import UseFetchBlog from "../services/useFetchBlog";
 
 const Newblog = () => {
   const [title, setTitle] = useState();

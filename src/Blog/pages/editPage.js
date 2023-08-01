@@ -21,12 +21,11 @@ const EditBlog = () => {
       setAuthor(blogs.author);
       setTime(blogs.time);
       setImage(blogs.image);
-      blogs.content.map((content) => arr.push(content));
     }
   }, [blogs]);
 
   const handleSave = () => {
-    const data = { title, content, author, time, image };
+    const data = { title, content, author, time, image, edit: "Edited" };
     fetch(`http://localhost:4000/blogs/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
