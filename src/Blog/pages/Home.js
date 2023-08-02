@@ -16,11 +16,16 @@ const Home = () => {
           <p className="text-white text-3xl">
             You need to add a blog{" "}
             <Link className="hover:underline" to={"/newblog"}>
-              create a new blog.
+              create a new blog
             </Link>
             .
           </p>
         </div>
+      )}{" "}
+      {error && (
+        <h1 className="text-2xl font-semibold text-center text-white">
+          Couldn't get data
+        </h1>
       )}
     </>
   );
