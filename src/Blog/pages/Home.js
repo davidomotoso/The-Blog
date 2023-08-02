@@ -12,11 +12,11 @@ const Home = () => {
       {blogs && blogs.length > 0 ? (
         <BlogList blogs={blogs} />
       ) : (
-        <div className="h-[80vh] w-full flex items-center justify-center">
-          <p className="text-3xl text-white">
-            You should{" "}
-            <Link to={"/newblog"} className="hover:underline">
-              create a new blog
+        <div className="h-[80vh] w-full flex justify-center items-center">
+          <p className="text-white text-3xl">
+            You need to add a blog{" "}
+            <Link className="hover:underline" to={"/newblog"}>
+              Create a New Blog.
             </Link>
           </p>
         </div>
