@@ -46,7 +46,7 @@ const BlogContent = () => {
             {blogs.image && (
               <img
                 src={blogs.image}
-                className="w-full h-[30rem] object-cover rounded-lg"
+                className="w-full h-96 object-cover object-center rounded-lg"
               />
             )}
           </section>
