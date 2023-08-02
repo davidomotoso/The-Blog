@@ -21,7 +21,7 @@ const Home = () => {
             .
           </p>
         </div>
-      )}{" "}
+      )}
       {error && (
         <h1 className="text-2xl font-semibold text-center text-white">
           Couldn't get data
