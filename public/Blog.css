@@ -657,6 +657,10 @@ video {
   height: max-content;
 }
 
+.h-\[80vh\] {
+  height: 80vh;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -1000,6 +1004,10 @@ video {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .hover\:shadow-lg:hover {
