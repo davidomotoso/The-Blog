@@ -17,7 +17,6 @@ const UseFetchBlog = (url) => {
       .then((data) => {
         setBlogs(data);
         setOriginalBlogs(data);
-        console.log(data);
         IsLoading(false);
       })
       .catch((err) => {
@@ -47,12 +46,7 @@ const UseFetchBlog = (url) => {
       const getTitle = originalBlogs.filter((blog) =>
         blog.title.toLowerCase().includes(inputLowerCase)
       );
-      if (!getTitle) {
-        console.log("nah");
-      } else {
-        setBlogs(getTitle);
-        // console.log(getTitle);
-      }
+      return setBlogs(getTitle);
     }
   };
 
