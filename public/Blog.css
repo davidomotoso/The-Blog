@@ -631,6 +631,10 @@ video {
   height: 25rem;
 }
 
+.h-\[30rem\] {
+  height: 30rem;
+}
+
 .h-\[88vh\] {
   height: 88vh;
 }
@@ -651,10 +655,6 @@ video {
 .h-max {
   height: -moz-max-content;
   height: max-content;
-}
-
-.h-\[80\%\] {
-  height: 80%;
 }
 
 .h-\[80vh\] {
