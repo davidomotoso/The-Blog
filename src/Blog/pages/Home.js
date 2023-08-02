@@ -16,8 +16,9 @@ const Home = () => {
           <p className="text-white text-3xl">
             You need to add a blog{" "}
             <Link className="hover:underline" to={"/newblog"}>
-              Create a New Blog
+              create a new blog.
             </Link>
+            .
           </p>
         </div>
       )}
