@@ -15,11 +15,15 @@ const BlogList = ({ blogs }) => {
             {blog && blog.image ? (
               <img
                 src={blog.image}
-                alt={blog.id}
+                alt="blogvisual"
                 className="w-full h-full object-cover"
               />
             ) : (
-              <img src={noDefault} className="w-full h-full object-cover" />
+              <img
+                src={noDefault}
+                alt="defaultvisual"
+                className="w-full h-full object-cover"
+              />
             )}
           </figure>
           <aside>

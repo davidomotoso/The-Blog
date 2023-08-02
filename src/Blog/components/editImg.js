@@ -11,6 +11,7 @@ const EditImg = () => {
           <img
             src={blogs.image}
             className="blur-sm rounded-lg w-full h-full object-cover"
+            alt="editVisual"
           />
         </section>
       ) : (

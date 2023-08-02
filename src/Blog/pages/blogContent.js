@@ -14,7 +14,7 @@ const BlogContent = () => {
   const { handleModifiedDate, date } = useFunction();
   useEffect(() => {
     handleModifiedDate(blogs);
-  }, [blogs]);
+  }, [handleModifiedDate, blogs]);
 
   return (
     <div className="text-white flex items-center justify-center my-5 h-full">
@@ -47,6 +47,7 @@ const BlogContent = () => {
               <img
                 src={blogs.image}
                 className="w-full h-96 object-cover object-center rounded-lg"
+                alt="defaultvisual"
               />
             )}
           </section>
