@@ -15,7 +15,7 @@ const Newblog = () => {
   const name = "Blog";
   useEffect(() => {
     getDate();
-  }, [getDate]);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

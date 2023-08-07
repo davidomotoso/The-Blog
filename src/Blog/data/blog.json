@@ -29,7 +29,7 @@
       "id": 2
     },
     {
-      "title": "Appeciation.",
+      "title": "Appreciation.",
       "content": [
         "Good morning world.",
         "Just wanted to use this moment to appreciate.",
@@ -55,7 +55,9 @@
       "title": "Process of  \"The-Blog\"",
       "content": [
         "Over the weeks, I have implemented an idea. Building a blog is one of those react beginner projects. I wanted mine to be quiet sophisticated. I saw the way LinkedIn allow users to post images and videos in a input and i was this was not allowed in nomal TAGS like \"Input,Textarea\" e.t.c.",
+        "",
         "This is where the developer tool came in handy. Inspected the code and saw they where using a DIV wow!! (is that possible).... Yes it is. 2 days before a watched a video of a developer using the \"ContentEditable\" attribute to do this, he actually used it to write his styles on his web Browser.",
+        "",
         "Definitely I already had an idea of \"contenteditable\". What i didn't really understand was the placeholder. In normal INPUT and TEXTAREA fields we use the normal \"placeholder\" attribute but in a \"contenteditable\" field we use \"data-placeholder\" and we have to style it by ourselves unlike \"placeholder\" where it already comes with a preset style."
       ],
       "author": "Developer : David",

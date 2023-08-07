@@ -1,4 +1,4 @@
-import UseFetchBlog from "../services/useFetchBlog";
+import useFunction from "../partials/functions";
 
 const BlogTitle = ({ value, edit, name }) => {
   return (
@@ -37,7 +37,7 @@ const BlogAuthor = ({ value, edit, name }) => {
 };
 
 const SearchNav = () => {
-  const { handleSearch } = UseFetchBlog("http://localhost:4000/blogs");
+  const { handleSearch, search } = useFunction();
   return (
     <label htmlFor="search">
       <input
@@ -45,7 +45,10 @@ const SearchNav = () => {
         name="search"
         placeholder="Search for blogs"
         id="search"
-        onKeyUp={(e) => handleSearch(e)}
+        value={search}
+        onChange={(e) => {
+          handleSearch(e);
+        }}
         className=" text-gray-600 px-3 py-1 rounded-lg font-semibold"
       />
     </label>

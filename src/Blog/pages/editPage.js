@@ -21,6 +21,7 @@ const EditBlog = () => {
       setAuthor(blogs.author);
       setTime(blogs.time);
       setImage(blogs.image);
+      setContent(blogs.content);
     }
   }, [blogs]);
 

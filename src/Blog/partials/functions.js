@@ -5,6 +5,7 @@ const useFunction = () => {
   const [time, setTime] = useState();
   const [content, setContent] = useState();
   const [date, setDate] = useState();
+  const [search, setSearch] = useState("");
 
   //   getting and storing the intial date
   const getDate = () => {
@@ -65,6 +66,11 @@ const useFunction = () => {
     }
   }
 
+  // handle search function
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
   //   returning the functions
   return {
     getDate,
@@ -73,6 +79,8 @@ const useFunction = () => {
     content,
     handleModifiedDate,
     date,
+    search,
+    handleSearch,
   };
 };
 
