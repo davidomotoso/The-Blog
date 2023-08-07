@@ -15,11 +15,6 @@ const UseFetchBlog = (url) => {
       })
       .then((data) => {
         setBlogs(data);
-<<<<<<< HEAD
-        setOriginalBlogs(data);
-        console.log(data);
-=======
->>>>>>> changes
         IsLoading(false);
       })
       .catch((err) => {
