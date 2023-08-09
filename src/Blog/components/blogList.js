@@ -1,8 +1,8 @@
-import useFunction from "../partials/functions";
+import { useSearchContext } from "../partials/SearchContext";
 import noDefault from "../static/newBlog.jpg";
 import { ReadMore } from "./Button";
 const BlogList = ({ blogs }) => {
-  const { search } = useFunction();
+  const { search } = useSearchContext();
   return (
     <section
       className="flex flex-col gap-y-14 items-start justify-center mt-20 mb-10

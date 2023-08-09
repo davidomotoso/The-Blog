@@ -8,7 +8,7 @@ import EditBlog from "../pages/editPage";
 const Main = () => {
   return (
     <Router>
-      <main className="m-auto w-[70em] bg-black h-auto pt-3">
+      <main className="mx-auto w-[70em] h-auto pt-3">
         <Navbar />
         <Routes>
           <Route exact path="/" Component={Home}></Route>

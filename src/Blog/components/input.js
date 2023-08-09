@@ -1,4 +1,4 @@
-import useFunction from "../partials/functions";
+import { useSearchContext } from "../partials/SearchContext";
 
 const BlogTitle = ({ value, edit, name }) => {
   return (
@@ -37,7 +37,7 @@ const BlogAuthor = ({ value, edit, name }) => {
 };
 
 const SearchNav = () => {
-  const { handleSearch, search } = useFunction();
+  const { search, setSearch } = useSearchContext();
   return (
     <label htmlFor="search">
       <input
@@ -47,9 +47,9 @@ const SearchNav = () => {
         id="search"
         value={search}
         onChange={(e) => {
-          handleSearch(e);
+          setSearch(e.target.value);
         }}
-        className=" text-gray-600 px-3 py-1 rounded-lg font-semibold"
+        className=" text-gray-600 px-3 py-2 rounded-lg font-semibold"
       />
     </label>
   );
