@@ -1,5 +1,7 @@
 # The-Blog
 
+A blogging website.
+
 ## Table of Contents
 
 - Introduction
