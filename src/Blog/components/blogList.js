@@ -5,7 +5,7 @@ const BlogList = ({ blogs }) => {
   const { search } = useSearchContext();
   return (
     <section
-      className="flex flex-col gap-y-14 sm:items-start items-center justify-center mt-20 mb-10
+      className="flex flex-col gap-y-32 sm:items-start items-center justify-center mt-20 mb-10
     "
     >
       {blogs
@@ -17,7 +17,7 @@ const BlogList = ({ blogs }) => {
         })
         .map((blog) => (
           <section
-            className="text-white flex sm:flex-row flex-col items-center justify-center gap-12"
+            className="text-white flex sm:flex-row flex-col items-center justify-center gap-x-12 gap-y-8"
             key={blog.id}
           >
             <figure className="w-64 h-64 rounded-full overflow-hidden ">

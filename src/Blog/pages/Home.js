@@ -19,9 +19,9 @@ const Home = () => {
       ) : (
         <div className="h-[79vh] w-full flex justify-center items-center">
           <p className="text-white text-3xl">
-            You need to add a blog{" "}
+            You need to add a blog.{" "}
             <Link className="hover:underline" to={"/newblog"}>
-              create a new blog
+              Create a new blog
             </Link>
             .
           </p>

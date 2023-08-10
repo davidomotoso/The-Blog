@@ -46,7 +46,7 @@ const EditBlog = () => {
   const name = "Edit";
 
   return (
-    <div className="flex flex-col gap-y-8 items-center justify-center w-full mb-7">
+    <div className="flex flex-col gap-y-8 items-center justify-center w-full mb-7 mt-14">
       {blogs && (
         <>
           {/* Blog Title */}
