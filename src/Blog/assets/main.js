@@ -8,7 +8,7 @@ import EditBlog from "../pages/editPage";
 const Main = () => {
   return (
     <Router>
-      <main className="mx-auto w-[70em] h-auto pt-3">
+      <main className="xl:mx-auto sm:px-8 mobile:px-4 xl:w-[70em] h-auto">
         <Navbar />
         <Routes>
           <Route exact path="/" Component={Home}></Route>

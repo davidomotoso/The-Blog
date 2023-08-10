@@ -32,9 +32,9 @@ const BlogContent = () => {
         </div>
       )}
       {blogs && (
-        <div className="w-[45rem]">
-          <h1 className="text-3xl font-semibold mb-1">{blogs.title}</h1>
-          <div className="text-lg flex items-center justify-between">
+        <div className="md:w-[45rem] w-full mt-6">
+          <h1 className="text-4xl font-semibold mb-4">{blogs.title}</h1>
+          <div className="text-lg flex flex-wrap gap-x-5 gap-y-1 sm:items-center justify-between">
             <p>Written by {blogs.author}</p>
             <p className="text-gray-300 flex items-center gap-x-5">
               {blogs.edit && <span>{blogs.edit} </span>}
@@ -51,7 +51,7 @@ const BlogContent = () => {
               />
             )}
           </section>
-          <div className="flex items-center gap-x-4 mt-4">
+          <div className="flex flex-wrap items-center gap-4 mt-6">
             <DeleteButton click={() => handleDelete(blogs.id)} />
             <EditButton click={() => handleEdit(blogs.id)} />
           </div>

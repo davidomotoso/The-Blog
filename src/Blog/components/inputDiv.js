@@ -2,7 +2,7 @@ import FileButton from "./fileButton";
 import "./index.css";
 const InputDiv = ({ value, handleImg, handleVideo }) => {
   return (
-    <section className="w-[50%] h-fit relative">
+    <section className="sm:w-[50%] mobile:w-full h-fit relative">
       <h2 className="text-center text-2xl font-semibold mb-2 text-white">
         Blog Content
       </h2>

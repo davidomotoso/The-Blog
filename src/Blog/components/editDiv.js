@@ -7,7 +7,7 @@ const EditDiv = ({ name, value }) => {
   const { id } = useParams();
   const { blogs } = UseFetchBlog(`http://localhost:4000/blogs/${id}`);
   return (
-    <label htmlFor="editedContent" className="w-[50%] h-max">
+    <label htmlFor="editedContent" className="sm:w-[50%] w-full h-max">
       <h2 className="text-center text-2xl font-semibold mb-2 text-white">
         {name} Content
       </h2>

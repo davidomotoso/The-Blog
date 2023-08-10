@@ -1,23 +1,23 @@
 import { useSearchContext } from "../partials/SearchContext";
-import noDefault from "../static/newBlog.jpg";
+import noDefault from "../static/blog.jpg";
 import { ReadMore } from "./Button";
 const BlogList = ({ blogs }) => {
   const { search } = useSearchContext();
   return (
     <section
-      className="flex flex-col gap-y-14 items-start justify-center mt-20 mb-10
+      className="flex flex-col gap-y-14 sm:items-start items-center justify-center mt-20 mb-10
     "
     >
       {blogs
         .filter((blog) => {
-          return search.toLowerCase() === ""
-            ? blog
-            : blog.title.toLowerCase().includes(search) ||
-                blog.author.toLowerCase().includes(search);
+          return search.trim() === ""
+            ? true
+            : blog.title.toLowerCase().includes(search.toLowerCase()) ||
+                blog.author.toLowerCase().includes(search.toLowerCase());
         })
         .map((blog) => (
           <section
-            className="text-white flex items-center justify-center gap-x-12"
+            className="text-white flex sm:flex-row flex-col items-center justify-center gap-12"
             key={blog.id}
           >
             <figure className="w-64 h-64 rounded-full overflow-hidden ">
@@ -35,7 +35,7 @@ const BlogList = ({ blogs }) => {
                 />
               )}
             </figure>
-            <aside>
+            <aside className="sm:w-auto w-full sm:text-start text-center">
               <h1 className="text-3xl font-semibold">{blog.title}</h1>
               <p className="mt-2">
                 <span>Written by {blog.author} </span>
