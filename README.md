@@ -32,7 +32,7 @@ This project is a web application for managing blogs. It allows users to create,
 
 ## Installation
 
-### Go to your terminal and run following the guidelines
+### Go to your terminal and run the following guidelines
 
 1. Clone the repository:
 
