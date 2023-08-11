@@ -6,9 +6,9 @@ A blogging website.
 
 - Introduction
 
-- Installation
-
 - Screenshots
+
+- Installation
 
 - Usage
 
@@ -32,18 +32,18 @@ This project is a web application for managing blogs. It allows users to create,
 
 ## Installation
 
-### Go to your terminal and follow the guidelines
+### Go to your terminal and run following the guidelines
 
 1. Clone the repository:
 
-   ```Git
+   ```git
    git clone https://github.com/davidomotoso/The-Blog.git
    ```
 
 2. Navigate to the project directory:
 
-   ```Cmd
-   cd The-Blog.
+   ```cmd
+   cd The-Blog
    ```
 
 3. Install dependencies:
@@ -62,13 +62,21 @@ This project is a web application for managing blogs. It allows users to create,
 
 ### Move to a new terminal and run these command
 
-```node
-npx json-server --watch src/Blog/data/blog.json --port 4000
-```
+1. Navigate to the project folder
+
+   ```cmd
+   cd The-Blog
+   ```
+
+2. Intialize json-server (as backend).
+
+   ```node
+   npx json-server --watch src/Blog/data/blog.json --port 4000
+   ```
 
 `Note: The default port for this project is 4000, you can change yours but remember to change the url's for fetching blogs.`
 
-Then you can add your blog (`The blog.json file is where your inputs would go`).
+Then you can add your blog (`Remember the blog.json file is where all your inputs would go to`).
 
 ## Usage
 
@@ -108,4 +116,4 @@ Then you can add your blog (`The blog.json file is where your inputs would go`).
 
 Contributions are always welcomed! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
 
-### Note: Json-server can not update a video file, so your blog might not be uploaded when you try to put in a video
+`Note: Json-server can not handle a video file(because of it's size), so your blog might not be uploaded when you try to put in a video.`
