@@ -41,7 +41,7 @@ const SearchNav = () => {
   return (
     <label htmlFor="search" className="sm:block hidden sm:w-auto">
       <input
-        type="text"
+        type="search"
         name="search"
         placeholder="Search for blogs"
         id="search"

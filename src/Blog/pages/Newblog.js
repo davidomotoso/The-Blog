@@ -13,6 +13,7 @@ const Newblog = () => {
   const { handleImg, handleVideo, video, image } = useFile();
   const { time, getDate, handleContentChange, content } = useFunction();
   const name = "Blog";
+
   useEffect(() => {
     getDate();
   }, []);
