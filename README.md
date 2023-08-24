@@ -80,13 +80,13 @@ Then you can add your blog (`Remember the blog.json file is where all your input
 
 ## Usage
 
-- Home Page: Displays a list of blog posts. Users can click on a blog title to view its detailed content.
+- Home Page: Displays a list of blog posts. Users can click on the read more button to view its detailed content.
 
 - New Blog: Allows users to create a new blog post. They can enter a title, content, author, and optionally upload an image or video.
 
 - Blog Content: Shows the detailed content of a selected blog post, including text content and media (images or videos).
 
-- Edit Blog: Enables users to edit the content of an existing blog post, including the title, content, and author. They can also update the media files.
+- Edit Blog: Enables users to edit the content of an existing blog post, including the title, content, and author.
 
 ## Technologies Used
 
